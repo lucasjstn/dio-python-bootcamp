@@ -8,5 +8,6 @@ while opcao != 0:
     elif opcao == 2:
         print("Exibindo extrado", end="...")
     else:
+        # could be a break
         print("Saindo")
         opcao = 0
