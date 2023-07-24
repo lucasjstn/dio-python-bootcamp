@@ -28,8 +28,9 @@ def sacar(valor, saldo, quantidades_operacoes):
     elif saldo >= valor and quantidades_operacoes < LIMITE_OPERACOES: 
         saldo -= valor
         quantidades_operacoes += 1
-        operacoes.join('Saque de R${valor}, Novo saldo: R${saldo}')
+        
         print(f'Novo saldo: R${saldo:.2f}')
+        return operacoes.join(f'{quantidades_operacoes}. Saque de R${valor}, Novo saldo: R${saldo}')
     else:
         print(f'Saldo insuficiente...')
 
@@ -50,7 +51,7 @@ while True:
         sys.exit()
     elif opcao == 1:
         valor = int(input(f"Insira o valor do saque:\n"))
-        sacar(valor, saldo, quantidades_operacoes)
+        operacoes = sacar(valor, saldo, quantidades_operacoes)
     elif opcao == 2:    
         print()
     elif opcao == 3:
